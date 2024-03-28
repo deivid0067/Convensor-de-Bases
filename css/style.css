@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(70, 30, 82);
+    color: aliceblue
+}
+
+
+
+input #base_decimal {
+    background-color: rgb(109, 236, 236);
+    border: black solid 3px ; 
+}
+
+input #base_decimal:focus {
+    width: 30%;
+    height: 30%;
+}
+
+#base_bin{
+background-color: red;
+}
+
+
+#base_octal{
+background-color: yellow;
+}
+
+#base_hexa{
+background-color: green;
+}

@@ -12,21 +12,31 @@
 <body>
 
         <center>
-                <h1>Marise's Machine</h1>
+                <h1>Conversor de Bases </h1>
 
                 <br><br>
 
-                <h3>Decimal</h3>
-                <input id="base_decimal" type="text" placeholder="Digite o valor em decimal">
+                <h3>Escolha a base para converter</h3>
+
+                <select id="selecao_base">
+                        <option value="10">Decimal</option>
+                        <option value="2">Binario</option>
+                        <option value="8">Octal</option>
+                        <option value="16">Hexadecimal</option>
+                </select>
+
+                <h3>Digite um número que deseja converter</h3>
+                <input id="Numero_a_converter" type="text" placeholder="Digite o valor em decimal">
 
                 <br><br>
 
+                <div id="div_conversao"></div>
                 <h3>converter para:</h3>
 
 
                 <input onclick="aparecer_octal()" type="checkbox"><b>Octal</b>
                 <br>
-                <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(0, 0, 0); width: 15%; height: 40px; font-weight: 500;"
+                <div style="display: none; border-radius: 5px; padding: 5px; color: rgb(0, 0, 0); width: 15%; height: 40px; font-weight: 500;"
                         id="base_octal"></div>
 
                 <br><br>
@@ -45,6 +55,12 @@
 
                 <br><br>
 
+                <input onclick="aparecer_dec()" type="checkbox"><b>Decimal</b>
+                <br>
+                <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(5, 5, 5); width: 60%; height: 50px; font-weight: 500;"
+                        id="base_dec"></div>
+
+
                 <button onclick="converter()">Converter</button>
         </center>
 
@@ -55,39 +71,71 @@
 
                 function converter() {
 
-                        let decimal = Number(demo1.value);
+                        let NumeroX = Number(Numero_a_converter.value);
 
-                        let octal = decimal.toString(8);
+                        let decimal = NumeroX.toString(10)
 
-                        let hexadecimal = decimal.toString(16);
+                        let octal = NumeroX.toString(8);
 
-                        let binaria = decimal.toString(2);
+                        let hexadecimal = NumeroX.toString(16); 
 
-                        console.log(decimal);
-                        console.log(octal);
-                        console.log(hexadecimal);
-                        console.log(binaria);
+                        let binaria = NumeroX.toString(2);
 
-                        document.getElementById("demo1").innerHTML = ` ${decimal}`;
-                        document.getElementById("demo2").innerHTML = ` ${octal}`;
-                        document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
-                        document.getElementById("demo4").innerHTML = ` ${binaria}`;
+                        let base = selecao_base.value
+
+                        let valorDecimal = parseInt(NumeroX, base);
+                       
+                        
+                        let select = Number(selecao_base.value)
+
+                        let hexadecimal_base = (document.querySelector('option[value = "16"]').value).toString(16);
+                        let binario_base = (document.querySelector('option[value = "2"]').value).toString(2);
+                        let octal_base = (document.querySelector('option[value = "8"]').value).toString(8);
+                        let decimal_base = (document.querySelector('option[value = "10"]').value);
+
+                        console.log(binario_base)
+                        console.log(hexadecimal_base)
 
 
+                        div_conversao.innerHTML = `${valorDecimal}`
+
+                        document.getElementById("Numero_a_converter").innerHTML = ` ${decimal}`;
+                        document.getElementById("base_octal").innerHTML = ` ${octal}`;
+                        document.getElementById("base_hexa").innerHTML = ` ${hexadecimal}`;
+                        document.getElementById("base_bin").innerHTML = ` ${binaria}`;
+                        document.getElementById("base_dec").innerHTML = `${decimal}`
+                       
+                        // if (select == 16) {
+                        //         base_hexa.style.display = 'block'
+                        // } else if (select == 8) {
+                        //         base_bin.style.display = 'block'
+                        // }else if (select == 2) {
+                        //         base_bin.style.display = 'block'
+                        // } else {
+
+                        // }
+
+
+                }
+                function hexadecimal() {
+                        console.log(2)
                 }
 
                 function aparecer_bin() {
-                        demo4.style.display = 'block'
+                        base_bin.style.display = 'block'
                 }
 
                 function aparecer_hexa() {
-                        demo3.style.display = 'block'
+                        base_hexa.style.display = 'block'
                 }
 
                 function aparecer_octal() {
-                        demo2.style.display = 'block'
+                        base_octal.style.display = 'block'
                 }
-                
+                function aparecer_dec() {
+                        base_dec.style.display = 'block'
+                }
+
         </script>
 </body>
 
