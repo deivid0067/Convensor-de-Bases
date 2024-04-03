@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Estilo.css">
+        <title>Conversor de Bases</title>
+</head>
+
+<body >
+        
+        <center>
+        <div class="container-conversor">
+                <h1 style="color: blueviolet; font-weight: bolder; font-size: 49px;-webkit-text-stroke: 4px #000000;">GENGAR's MACHINE </h1>
+
+                <h2>Selecione uma Base:</h2>
+                <select id="seletor_de_bases">
+                        <option value="none" disabled selected>Escolha a Base</option>
+                        <option value="10">Decimal</option>
+                        <option value="8">Octal</option>
+                        <option value="16">Hexadecimal</option>
+                        <option value="2">Binario</option>
+                </select>
+
+                <!-- <select style="display: none;">
+                        <option value="">A</option>
+                        <option value="">B</option>
+                        <option value="">C</option>
+                        <option value="">D</option>
+                        <option value="">E</option>
+                        <option value="">F</option>
+                </select> -->
+
+                <div class="conteudo">
+                        <h3>Digite um número que deseja converter</h3>
+                        <input id="Numero_a_converter" type="text" placeholder="Digite o valor">
+
+
+                        <h3>converter para:</h3>
+
+                        <button onclick="converter()">Converter</button>
+
+
+                        <div id="bases_convertidas">
+                                Suas Bases convertidas são
+                        </div>
+                </div>
+        </div>
+        </center>
+
+
+
+
+</body>
+
+</html>
+
+<script>
+
+        function converter() {
+                let NumeroX = Numero_a_converter.value;
+                let seletor = Number(seletor_de_bases.value)
+
+                let decimal = parseInt(NumeroX,seletor);
+
+                let octal = decimal.toString(8);
+
+                let hexadecimal = decimal.toString(16).toUpperCase();
+
+                let binario =  decimal.toString(2); 
+                var Resultado = 
+
+`Esse número na Base Octal é : <br> ${octal} 
+<br>
+<br>
+Esse Número em Binario é : <br> ${binario}
+<br>
+<br>
+Esse Número em Hexadecimal é: <br> ${hexadecimal}
+<br>
+<br>
+Esse Número em Decimal é:<br> ${decimal}`
+
+               
+                if(octal == NaN || binario == NaN || hexadecimal == NaN || decimal == NaN ){
+                        alert("Numero invalido para base selecionada, escolha outra base ou outro numero")
+                        document.getElementById("bases_convertidas").innerHTML = `Suas Bases convertidas são:`;
+                } else{
+                        document.getElementById("bases_convertidas").innerHTML = Resultado;
+                }
+        }                                      
+        
+</script>

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* img link : https://wallhere.com/pt/wallpaper/1242035 */
+
+body {
+    margin: 50px;
+    font-family: 'Poppins';
+    background-image: url(https://c.wallhere.com/photos/0a/fe/1920x1200_px_Gengar_Ghastly_Ghosts_Haunter_pokemon-1242035.jpg!d);
+    background-size: cover; /* Para cobrir toda a área do body */
+    background-position: center; /* Para centralizar a imagem */
+    background-repeat: no-repeat; /* Para que a imagem não se repita */
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: white;
+    
+}
+
+.container-conversor{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+    border-radius: 45px;
+    border: black ridge 3px;
+    width: 550px;
+    height: 800px;
+    opacity: 90%;
+    background-color: rgb(55, 5, 136);
+    -webkit-box-shadow: 21px 24px 45px 57px rgba(0,0,0,0.75);
+    -moz-box-shadow: 21px 24px 45px 57px rgba(0,0,0,0.75);
+    box-shadow: 21px 24px 45px 57px rgba(0,0,0,0.75);
+}
+
+.conteudo {
+    align-items: center;
+    justify-content: center;
+}
+
+#bases_convertidas {
+    font-weight: bold;
+    border-radius: 20px;
+    border: outset black 3px;
+    background: rgba(203,96,179,1);
+    background: -moz-linear-gradient(top, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 29%, rgba(193,70,161,1) 43%, rgba(179,45,145,1) 68%, rgba(168,0,119,1) 99%, rgba(168,0,119,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(203,96,179,1)), color-stop(29%, rgba(193,70,161,1)), color-stop(43%, rgba(193,70,161,1)), color-stop(68%, rgba(179,45,145,1)), color-stop(99%, rgba(168,0,119,1)), color-stop(100%, rgba(168,0,119,1)));
+    background: -webkit-linear-gradient(top, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 29%, rgba(193,70,161,1) 43%, rgba(179,45,145,1) 68%, rgba(168,0,119,1) 99%, rgba(168,0,119,1) 100%);
+    background: -o-linear-gradient(top, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 29%, rgba(193,70,161,1) 43%, rgba(179,45,145,1) 68%, rgba(168,0,119,1) 99%, rgba(168,0,119,1) 100%);
+    background: -ms-linear-gradient(top, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 29%, rgba(193,70,161,1) 43%, rgba(179,45,145,1) 68%, rgba(168,0,119,1) 99%, rgba(168,0,119,1) 100%);
+    background: linear-gradient(to bottom, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 29%, rgba(193,70,161,1) 43%, rgba(179,45,145,1) 68%, rgba(168,0,119,1) 99%, rgba(168,0,119,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#a80077', GradientType=0 );
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 70%;
+    max-width: 80%;
+    min-height: 20%;
+    max-height: 70%;
+    margin-top: 50px;
+}
+
+#Numero_a_converter {
+    padding: 5px;
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+
+button {
+    border-radius: 10px;
+    padding: 6px;
+    border-width: 1px;
+    color: white;
+    background-color: black;
+    transition: 0.5s;
+}
+
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+#seletor_de_bases {
+    padding: 5px;
+    border-radius: 10px;
+}
