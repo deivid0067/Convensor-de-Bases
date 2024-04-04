@@ -5,49 +5,52 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/Estilo.css">
         <title>Conversor de Bases</title>
 </head>
 
 <body>
 
-        <div class="container-conversor">
-                <h1>Conversor de Bases </h1>
+        <center>
+                <div class="container-conversor">
+                        <h1
+                                style="color: blueviolet; font-weight: bolder; font-size: 49px;-webkit-text-stroke: 4px #000000;">
+                                GENGAR's MACHINE </h1>
 
-                <h2>Selecione uma Base:</h2>
-                <select id="seletor_de_bases">
-                        <option value="10">Decimal</option>
-                        <option value="8">Octal</option>
-                        <option value="16">Hexadecimal</option>
-                        <option value="2">Binario</option>
-                </select>
+                        <h2>Selecione uma Base:</h2>
+                        <select id="seletor_de_bases">
+                                <option value="none" disabled selected>Escolha a Base</option>
+                                <option value="10">Decimal</option>
+                                <option value="8">Octal</option>
+                                <option value="16">Hexadecimal</option>
+                                <option value="2">Binario</option>
+                        </select>
 
-                <select style="display: none;">
+                        <!-- <select style="display: none;">
                         <option value="">A</option>
                         <option value="">B</option>
                         <option value="">C</option>
                         <option value="">D</option>
                         <option value="">E</option>
                         <option value="">F</option>
-                </select>
+                </select> -->
 
-                <div class="conteudo">
-                        <h3>Digite um número que deseja converter</h3>
-                        <input id="Numero_a_converter" type="text" placeholder="Digite o valor">
-
-
-                        <h3>converter para:</h3>
-
-                        <button onclick="converter()">Converter</button>
+                        <div class="conteudo">
+                                <h3>Digite um número que deseja converter</h3>
+                                <input id="Numero_a_converter" type="text" placeholder="Digite o valor">
 
 
-                        <div id="bases_convertidas">
-                                Suas Bases convertidas são
+                                <h3>converter para:</h3>
+
+                                <button onclick="converter()">Converter</button>
+
+
+                                <div id="bases_convertidas">
+                                        Suas Bases convertidas são
+                                </div>
                         </div>
                 </div>
-        </div>
-
-
+        </center>
 
 
 
@@ -88,71 +91,73 @@ Esse Número em Decimal é: ${decimal}`
 
         }
 
-                const validacaoBinaria = e => {
-                        let validacao = /^[0-1]*$/
-                        let key = e.key
 
-                        if (!validacao.test(key)) {
-                                e.preventDefault()
-                        }
+        const validacaoBinaria = e => {
+                let validacao = /^[0-1]*$/
+                let key = e.key
+
+                if (!validacao.test(key)) {
+                        e.preventDefault()
                 }
+        }
 
 
 
-                const validacaoDecimal = e => {
-                        let validacao = /^[0-9]*$/
-                        let key = e.key
+        const validacaoDecimal = e => {
+                let validacao = /^[0-9]*$/
+                let key = e.key
 
-                        if (!validacao.test(key)) {
-                                e.preventDefault()
-                        }
+                if (!validacao.test(key)) {
+                        e.preventDefault()
                 }
+        }
 
 
-                const validacaoOctal = e => {
-                        let validacao = /^[0-7]*$/
-                        let key = e.key
+        const validacaoOctal = e => {
+                let validacao = /^[0-7]*$/
+                let key = e.key
 
-                        if (!validacao.test(key)) {
-                                e.preventDefault()
-                        }
+                if (!validacao.test(key)) {
+                        e.preventDefault()
                 }
+        }
 
-                const validacaoHexadecimal = e => {
-                        let validacao = /^[0-9a-fA-F]*$/
-                        let key = e.key
+        const validacaoHexadecimal = e => {
+                let validacao = /^[0-9a-fA-F]*$/
+                let key = e.key
 
-                        if (!validacao.test(key)) {
-                                e.preventDefault()
-                        }
+                if (!validacao.test(key)) {
+                        e.preventDefault()
                 }
+        }
 
 
-                const validate = e => {
-                        let selecionarBase = parseInt(seletor_de_bases.value);
-                        switch (selecionarBase) {
-                                case 2:
-                                        validacaoBinaria(e)
-                                        break;
-                                case 10:
-                                        validacaoDecimal(e)
-                                        break;
-                                case 8:
-                                        validacaoOctal(e)
-                                        break;
-                                case 16:
-                                        validacaoHexadecimal(e)
-                                        break;
-                        }
+        const validate = e => {
+                let selecionarBase = parseInt(seletor_de_bases.value);
+                switch (selecionarBase) {
+                        case 2:
+                                validacaoBinaria(e)
+                                break;
+                        case 10:
+                                validacaoDecimal(e)
+                                break;
+                        case 8:
+                                validacaoOctal(e)
+                                break;
+                        case 16:
+                                validacaoHexadecimal(e)
+                                break;
                 }
+        }
 
-                console.log(validate)
 
-                
-                Numero_a_converter.addEventListener('keypress', validate)
-                seletor_de_bases.addEventListener('change', () => {
-                        Numero_a_converter.value = ""
-                })
+
+
+
+        Numero_a_converter.addEventListener('keypress', validate)
+        seletor_de_bases.addEventListener('change', () => {
+                Numero_a_converter.value = ""
+        })
 
 
 
